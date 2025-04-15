@@ -14,6 +14,23 @@
 
 .header {
     grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 1fr 2fr;
+    padding: 15px 60px;
+    gap: 10px;
+}
+
+.search-bar {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    display: flex;
+    gap: 16px;
+    flex-direction: row;
+}
+
+.username-field {
+    grid-row: 2 / 3;
 }
 
 .sidebar {
@@ -85,6 +102,12 @@ a {
     fill: whitesmoke;
 }
 
+.search-icon {
+    height: 25px;
+    width: 25px;
+    align-self: center;
+}
+
 .icon {
     fill: whitesmoke;
 }
@@ -95,11 +118,21 @@ a {
 }
 
 @font-face {
-    font-family: Roboto-Regular;
-    src: url(./font/Roboto-Regular.ttf);
-}
-
-@font-face {
     font-family: RobotoMono-Regular;
     src: url(./font/RobotoMono-Regular.ttf);
+}
+
+input {
+    border-radius: 14px;
+    height: 2em;
+    border: 1px solid #E5E7EB;
+    background-color: #E5E7EB;
+    align-self: center;
+    padding: 12px 16px;
+    font-size: 14px;
+}
+
+input:focus {
+    outline-style: none;
+    /* outline-color: cornflowerblue; */
 }
