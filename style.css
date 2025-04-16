@@ -247,3 +247,28 @@ button {
     flex: 1;
     background-color: white;
 }
+
+#announce-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding: 1em 2em 2em 2em;
+}
+
+.announce-card-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    gap: 4px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #b9b8b8;
+}
+
+.announce-card-item > .title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.announce-card-item > .title + p {
+    color: gray
+}
