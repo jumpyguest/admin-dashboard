@@ -38,7 +38,6 @@
     display: flex;
     flex-direction: column;
     gap: 3em;
-    /* justify-content: center; */
     padding: 25px;
     color: whitesmoke;
 }
@@ -90,7 +89,6 @@ ul {
 a {
     text-decoration: none;
     color: inherit;
-    /* font-weight: bold; */
     font-size: large;
 }
 
@@ -100,10 +98,12 @@ a {
     fill: whitesmoke;
 }
 
-.search-icon, .bell-icon {
+.search-icon,
+.bell-icon,
+.highlights-icon {
     height: 25px;
     width: 25px;
-    align-self: center;
+    align-self: end;
 }
 
 .icon {
@@ -136,7 +136,6 @@ input {
 
 input:focus {
     outline-style: none;
-    /* outline-color: cornflowerblue; */
 }
 
 .user-pic {
@@ -218,12 +217,20 @@ button {
 .highlights-field {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
+    padding: 2em;
 }
 
-.announcements-field, .trending-field {
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2em;
+}
+
+.announcements-field,
+.trending-field,
+.highlights-field {
     display: flex;
     flex-direction: column;
-    /* padding: 2em; */
     gap: 1em;
 }
 
@@ -237,15 +244,46 @@ button {
 
 .section-title {
     font-size: 20px;
-    /* font-weight: bold; */
 }
 
-.card {
+.card,
+.highlight-card {
     border: 1px solid #eee;
     box-shadow: 2px 4px 16px rgba(0,0,0,.06);
     border-radius: 10px;
     flex: 1;
     background-color: white;
+}
+
+.highlight-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    border-left: 10px solid #a6cce4;
+}
+
+.highlight-title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.highlight-preview {
+    font-size: 14px;
+    height: 95px;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.highlight-card-icon-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 2em;
+    padding-top: 1em;
+    flex: 1;
 }
 
 #announce-card {
@@ -270,7 +308,8 @@ button {
 }
 
 .announce-card-item > .title + p,
-.boxer-name {
+.boxer-name,
+.highlight-preview {
     color: gray
 }
 
